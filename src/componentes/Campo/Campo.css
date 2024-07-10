@@ -1,0 +1,25 @@
+.campo{
+    margin:24px 0;
+
+}
+
+.campo label{
+    font-size: 14px;
+    padding-bottom: 8px; 
+    display: block;
+    color:white;
+}
+
+.campo input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #2271D1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #03122f;
+    box-sizing: border-box;
+    color: #2271D1;
+}

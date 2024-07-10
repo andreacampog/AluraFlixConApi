@@ -1,0 +1,22 @@
+.tarjeta__container{
+    width:335px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    flex-grow: 2;   
+}
+
+.tarjeta__foto{
+    width: 100%;   
+
+}
+
+.tarjeta__actions{     
+    height: 80px;   
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: 6px solid; 
+    border-radius: 0 0 10px 10px;
+
+}

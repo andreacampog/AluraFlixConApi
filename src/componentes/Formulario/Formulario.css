@@ -1,0 +1,13 @@
+.formulario{
+    margin: 10px 0;
+}
+
+.formulario form{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.botones{
+    display:flex;
+    justify-content: space-evenly;
+}
