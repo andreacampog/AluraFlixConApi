@@ -38,6 +38,9 @@ header::after{
     text-decoration:none;
 }
 
+.active-link{
+    border: 2px solid  #2271d1;
+}
 
 @media(max-width:767px){
     header{

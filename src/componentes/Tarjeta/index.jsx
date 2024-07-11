@@ -1,11 +1,12 @@
 import './Tarjeta.css'
 import { Boton } from '../Boton';
 
+
 const Tarjeta = (props) => {
     
-    const {foto,color, handleOpenModal} = props;
+    const {id,foto,color,handleOpenModal,handleDelete} = props;
     const estiloBorde = {color:color}
-
+      
     return( 
         <div className='tarjeta__container' style={estiloBorde}>
             <img  className='tarjeta__foto' src={foto} alt={foto} />
@@ -15,7 +16,9 @@ const Tarjeta = (props) => {
                 color = '#FFFFFF'
                 background = '#000000'
                 border='none'
-                boxshadow ='2px 2px 2px'/>   
+                boxshadow ='2px 2px 2px'  
+                onClick={()=> handleDelete(id)}            
+                /> 
                 
                 <Boton icono= '.\img\edit.png'
                 nombre = 'Editar'             
@@ -23,7 +26,8 @@ const Tarjeta = (props) => {
                 background = '#000000'
                 border = 'none'
                 boxshadow ='2px 2px 2px'
-                onClick ={handleOpenModal} />  
+                onClick={handleOpenModal}
+                />  
             </div>
         </div>   
     );

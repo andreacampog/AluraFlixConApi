@@ -1,13 +1,21 @@
+import { buscar } from '../api/api'
 import '../assets/css/NuevoVideo.css'
 import { Formulario } from "../componentes/Formulario"
 import React from 'react'
 
+import { useState,useEffect } from 'react'
 
 const NuevoVideo = (props) =>{    
 
-    const {categorias} = props;
+    const {url} = props
 
-    console.log(categorias);
+    const [categorias,setCategorias] = useState([]);
+
+    useEffect(()=>{
+        buscar(url,setCategorias)
+        console.log(categorias);
+    },[url]);       
+
 
     return(
         <main className='principal' >

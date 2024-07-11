@@ -1,23 +1,37 @@
 import {Banner} from '../componentes/Banner'
 import {Categoria} from '../componentes/Categoria'
+import {buscar} from '../api/api'
+import { useState, useEffect } from "react"
 
  
-const Home =({categorias,videos,handleOpenModal}) =>{       
-    return (
-        <main>       
-            <Banner />
-            {categorias.map((categoria, index) => (
-            <Categoria
-            titulo={categoria.titulo}
-            key={index}
-            color={categoria.color}
-            // videos={videos}
-            videos ={videos}
-            handleOpenModal={handleOpenModal}
-            />
-        ))}            
-        </main>
-    )
-}
+const Home =({url,handleOpenModal}) =>{    
 
+    const [categorias,setCategorias] = useState([]);    
+
+    useEffect(()=> {
+        buscar(url,setCategorias)
+        .then(()=> console.log(categorias))
+        .catch(error => console.error(error))   
+    }, [url]);
+
+    return (
+        <main> 
+            <Banner />
+            {
+                categorias.length > 0 && categorias.map(categoria=> {              
+                    const {id,titulo,color} = categoria;
+                    return (
+                        <Categoria          
+                            key={id}                                             
+                            titulo={titulo}                            
+                            color={color}                         
+                            handleOpenModal={handleOpenModal}                          
+                            url={'/videos'}                        
+                        />
+                    );
+                })
+            }            
+      </main>
+    );     
+};   
 export {Home}

@@ -1,10 +1,7 @@
 import './Modal.css';
 import { Formulario } from '../Formulario';
 
-const Modal = (props)=>{ 
-
-    const {listaCategorias,handleCloseModal} = props
-
+const Modal = ({listaCategorias=[],handleCloseModal})=>{ 
 
     return (
         <section className='modal-overlay' >
@@ -12,7 +9,13 @@ const Modal = (props)=>{
                 <button   button className='close_button' onClick={handleCloseModal} >X</button>            
                 <h1>EDITAR CARD</h1>           
                 <section>
-                    <Formulario listaCategorias = {listaCategorias}/>
+                    <Formulario 
+                    listaCategorias = {listaCategorias}
+                    background = '#000000'                    
+                    color = '#FFFFFF'
+                    active = 'red'
+                    border = '#FFFFFF'
+                />               
                 </section>
             </div>
             
